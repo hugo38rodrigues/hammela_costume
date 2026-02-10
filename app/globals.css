@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 
+
 @theme {
 	--font-family-title: 'Cormorant Garamond', serif;
 	--font-family-text: 'Montserrat', sans-serif;
@@ -9,6 +10,7 @@
 	--color-paragraph: #4a5568;
 	--color-border: #a8c5e0;
 	--color-card: #f0f9ff;
+    --border-color-btn: #a8c5e0;
 
 	--text-size-title: 2.25rem;
 	--text-size-body: 1.125rem;

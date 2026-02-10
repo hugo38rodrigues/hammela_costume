@@ -1,4 +1,4 @@
-import { NavBar } from "@/src/components/nav-bar"
+import { NavBar } from "@/components/nav-bar"
 
 
 export default function HomeLayout({

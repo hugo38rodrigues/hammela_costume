@@ -1,4 +1,4 @@
-import { BestPictures } from '@/src/components/best-pictures'
+import { BestPictures } from '@/components/best-pictures'
 import Image from 'next/image'
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
 				/>
 			</header>
 			<main>
-				<h2 className='flex justify-center p-4'>Les derniers models</h2>
+				<h2 className='flex justify-center p-4 text-heading text-size-body font-family-text'>Les derniers models</h2>
 				<div id='ctn-best-pictures'>
 					<BestPictures />
 				</div>

@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+html, body {
+  height: 100%;
+}
 
 @theme {
 	--font-family-title: 'Cormorant Garamond', serif;
@@ -14,6 +17,7 @@
 
 	--text-size-title: 2.25rem;
 	--text-size-body: 1.125rem;
+    --background-image-fond: url('/fond.webp');
 }
 
 @media (prefers-color-scheme: dark) {

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { FC } from 'react'
 import { Picture } from '../lib/interface/picture'
 
-export const MyLogo: FC<Picture> = ({ alt, src }) => {
+export const MyPictures: FC<Picture> = ({ alt, src }) => {
 	return (
 		<>
 			<Image

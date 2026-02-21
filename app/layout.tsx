@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Montserrat } from 'next/font/google'
 import './globals.css'
+import { Toaster } from 'sonner'
 
 const cormorant = Cormorant_Garamond({
 	subsets: ['latin'],
@@ -25,16 +26,25 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang='fr' className='h-full'>
+		<html
+			lang='fr'
+		>
 			<body
 				className={cn(
 					montserrat.variable,
 					cormorant.variable,
 					'antialiased',
-					'h-full',
 				)}
 			>
 				{children}
+				<Toaster
+					toastOptions={{
+						classNames: {
+							success: '!bg-green-500 !text-white !border-none',
+							error: '!bg-red-500 !text-white !border-none',
+						},
+					}}
+				/>
 			</body>
 		</html>
 	)

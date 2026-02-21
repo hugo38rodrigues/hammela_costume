@@ -7,7 +7,7 @@ export default function HomeLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<div className='w-full h-full flex flex-col items-center p-4'>
+		<div className='w-full min-h-screen flex flex-col items-center p-4 bg-fond bg-cover bg-center bg-no-repeat bg-fixed'>
 			<NavBar />
 			{children}
 		</div>

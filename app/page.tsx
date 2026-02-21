@@ -4,9 +4,9 @@ import Link from 'next/link'
 
 export default function LandingPage() {
 	return (
-		<main  className='w-full h-full flex '>
+		<main className='w-full min-h-screen  flex '>
 			<div
-				id=''
+				id='landing-page'
 				className='bg-sky-300 w-md'
 			></div>
 			<div className='flex flex-col items-center justify-evenly w-full h-full'>

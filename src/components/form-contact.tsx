@@ -1,8 +1,10 @@
 'use client'
 
 import { IS_EMAIL } from '@/lib/regex'
+import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { FC, useState } from 'react'
+import { toast } from 'sonner'
 import {
 	Card,
 	CardAction,
@@ -15,10 +17,14 @@ import {
 import { Input } from '../../components/ui/input'
 import { Label } from '../../components/ui/label'
 import { Button } from './ui/button'
-import { Field, FieldDescription } from './ui/field'
+import { Field, FieldError } from './ui/field'
+import { Textarea } from './ui/textarea'
 
 interface PropsFormContact {
-	sendEmailAndDescription: (emai: string, description: string) => void
+	sendEmailAndDescription: (
+		emai: string,
+		description: string,
+	) => Promise<{ success: boolean }>
 }
 
 export const FormContact: FC<PropsFormContact> = ({
@@ -27,13 +33,27 @@ export const FormContact: FC<PropsFormContact> = ({
 	const [email, setEmail] = useState<string>('')
 	const [description, setDescription] = useState<string>('')
 	const [errorMessage, setErrorMessage] = useState<string>('')
+	const [isErrorField, setIsErrorField] = useState<boolean>(false)
 
-	const getEmailAndDescription = (): void => {
-		
+	const getEmailAndDescription = async (): Promise<void> => {
 		if (!IS_EMAIL.test(email)) {
+			setIsErrorField(true)
 			setErrorMessage("L'email n'est pas au bon format")
+		} else if (description.length < 10 || description.length > 1000) {
+			setIsErrorField(true)
+			setErrorMessage("Vous n'êtes pas un humain")
 		} else {
-			sendEmailAndDescription(email, description)
+			const sendResult = await sendEmailAndDescription(email, description)
+			
+			if (sendResult?.success) {
+				toast.success('Un email a été envoyé à la créatrice', {
+					position: 'bottom-left',
+				})
+			} else {
+				toast.error('Une erreur est survenue', {
+					position: 'bottom-left',
+				})
+			}
 			resetUseState()
 		}
 	}
@@ -41,55 +61,65 @@ export const FormContact: FC<PropsFormContact> = ({
 	const resetUseState = (): void => {
 		setErrorMessage('')
 		setDescription('')
+		setIsErrorField(false)
 		setEmail('')
 	}
-
-	const hasNotGooDEmail: boolean = errorMessage.length > 1 ? true : false
 
 	return (
 		<>
 			<header className='p-4'>
-				<h1 className='text-title text-size-title font-family-title'>
-					Contacter Moi
+				<h1 className='text-heading text-size-title font-family-title'>
+					Contactez Moi
 				</h1>
 			</header>
-			<main className='w-lg h-lg'>
-				<Card className='w-full h-full border-btn bg-neutral-50-50 border-2'>
+			<main className='w-lg h-lg shadow-2xl'>
+				<Card className='w-full h-full border-btn bg-neutral-50-50 border-2 bg-white'>
 					<CardHeader className='flex flex-col'>
 						<div
 							id='ctn-email'
 							className='w-48'
 						>
-							<Field data-invalid={hasNotGooDEmail}>
+							<Field
+								data-invalid
+								className='w-52'
+							>
 								<Label
 									htmlFor='email'
-									className='text-paragraph pb-2 font-family-text'
+									className={`pb-2 font-family-text ${isErrorField ? 'text-red-500' : 'text-paragraph'}`}
+									aria-invalid={isErrorField}
 								>
 									Votre adresse mail
 								</Label>
 								<Input
 									id='email'
-									aria-invalid={hasNotGooDEmail}
+									aria-invalid={isErrorField}
+									className={cn(
+										'test-shadow-2xl focus-visible:ring-0 focus-visible:ring-offset-0',
+										isErrorField
+											? 'border-red-500 focus-visible:border-red-500'
+											: 'border-btn focus-visible:border-btn',
+									)}
+									value={email}
 									onChange={(e) =>
 										setEmail(e.currentTarget.value)
 									}
 								/>
-								{hasNotGooDEmail && (
-									<FieldDescription className='text-red-500'>
+								{isErrorField && (
+									<FieldError className='text-red-500 text-sm'>
 										{errorMessage}
-									</FieldDescription>
+									</FieldError>
 								)}
 							</Field>
 						</div>
 						<CardAction className='flex justify-end w-full p-4'>
 							<Button
 								asChild
-								className='text-card border-2 border-btn'
+								className='text-card border-2 border-btn focus-visible:ring-0 focus-visible:ring-offset-0 shadow-2xl'
 							>
 								<Link
 									href={'/assets/fiche_mesure.pdf'}
 									target='_blank'
-									className='text-paragraph text-size-body font-family-text'
+									className='text-paragraph font-family-text'
 								>
 									Comment prendre vos mesures
 								</Link>
@@ -98,22 +128,31 @@ export const FormContact: FC<PropsFormContact> = ({
 					</CardHeader>
 					<CardContent>
 						<CardTitle>
-							<p className='text-paragraph text-size-body font-family-text p-4'>
+							<p className='text-paragraph text-size-body font-family-text p-4 '>
 								Pour toute commande, merci de renseigner votre
 								taille et toute autre information pour votre
 								création.
 							</p>
 						</CardTitle>
 						<CardDescription className='p-4 flex justify-center'>
-							<Input
-								id='description'
-								name='description'
-								required
-								className='w-80 h-44 border-btn border-2'
-								onChange={(e) =>
-									setDescription(e.currentTarget.value)
-								}
-							/>
+							<Field data-invalid>
+								<Textarea
+									id='description'
+									name='description'
+									required
+									value={description}
+									aria-invalid={isErrorField}
+									className={cn(
+										'w-80 h-44 border-2 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-2xl',
+										isErrorField
+											? 'border-red-500 focus-visible:border-red-500'
+											: 'border-btn focus-visible:border-btn',
+									)}
+									onChange={(e) =>
+										setDescription(e.currentTarget.value)
+									}
+								/>
+							</Field>
 						</CardDescription>
 					</CardContent>
 					<CardFooter className=''>

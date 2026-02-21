@@ -11,18 +11,20 @@ export default function Home() {
 					height={120}
 					width={110}
 				/>
-				<h1 className='text-size-title text-heading font-family-title pr-16' >
-					Titre du site
+				<h1 className='text-size-title text-heading font-family-title pr-16'>
+					Hammela Costume
 				</h1>
 				<Image
-					src={"/drapeau_français.webp"}
+					src={'/drapeau_français.webp'}
 					alt='Un drapeau français'
 					height={30}
 					width={30}
 				/>
 			</header>
 			<main>
-				<h2 className='flex justify-center p-4 text-heading text-size-body font-family-text'>Les derniers models</h2>
+				<h2 className='flex justify-center p-4 text-heading text-size-body font-family-text'>
+					Les derniers models
+				</h2>
 				<div id='ctn-best-pictures'>
 					<BestPictures />
 				</div>
@@ -31,7 +33,12 @@ export default function Home() {
 					className='p-4'
 				>
 					<div id='presentation'>
-						<p>
+						<p
+							className='
+							text-size-body
+							p-2
+							text-paragraph'
+						>
 							Bonjour, je suis Sarah, costumière passionnée de
 							couture et surtout de costume historique. Diplômée
 							d'un CAP vêtement flou (2018), d'un bac
@@ -39,33 +46,36 @@ export default function Home() {
 							(2021) et d'une licence DN MADE spectacle spécialité
 							costume à la Martinière Diderot à Lyon.
 						</p>
-						<p>
+						<p
+							className='
+							text-size-body
+							p-2
+							text-paragraph'
+						>
 							J'ai eu la chance de travailler dans différents
 							univers : retouche, création en mode et robe de
 							mariée, danse, théâtre, cinéma, notamment sur "Le
 							Comte de Monte-Cristo" en 2024.
 						</p>
 					</div>
-					<div id=''></div>
 				</div>
 				<div
 					id='engagement'
-					className='p-4'
 				>
 					<div id='engagement-list'>
 						<ul>
-							<li>
+							<li className='text-size-body p-2 text-paragraph'>
 								✨ Création française : Toutes les pièces sont
 								imaginées et réalisées par mes soins dans mon
 								atelier.
 							</li>
-							<li>
+							<li className='text-size-body p-2 text-paragraph'>
 								🌿 Éco-conception : Je privilégie la
 								récupération de tissus (draps anciens, rideaux,
 								dentelles chinées en vide-grenier) pour donner
 								une seconde vie à ces matières nobles.
 							</li>
-							<li>
+							<li className='text-size-body p-2 text-paragraph'>
 								🎭 Inspiration historique : Mes créations
 								s'inspirent des techniques et esthétiques
 								d'époque, adaptées avec les outils modernes. Car
@@ -80,7 +90,7 @@ export default function Home() {
 					id='passion'
 					className='p-4'
 				>
-					<p>
+					<p className='text-size-body text-paragraph'>
 						Le costume historique a toujours été une passion mais
 						c'est en découvrant la danse historique que j'ai réalisé
 						ce qui m'anime vraiment, voir mes croquis prendre vie.

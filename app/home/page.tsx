@@ -23,7 +23,7 @@ export default function Home() {
 			</header>
 			<main>
 				<h2 className='flex justify-center p-4 text-heading  font-family-text'>
-					Les derniers models
+					Les derniers modèles
 				</h2>
 				<div id='ctn-best-pictures'>
 					<BestPictures />

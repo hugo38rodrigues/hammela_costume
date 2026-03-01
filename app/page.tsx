@@ -29,9 +29,9 @@ export default function LandingPage() {
 					className='w-lg p-4'
 				>
 					<p className='font-text text-paragraph text-base-size font-semibold'>
-						Bienvenue dans un univers de création et de style années
-						1860, j'espère que ce voyage au coeur de la mode d'antan
-						vous plaira.
+						Bienvenu dans un univers de création et de style des années
+						1860. J'espère que ce voyage au coeur de la mode d'antan
+						vous plaira !
 					</p>
 				</div>
 				<div

@@ -23,7 +23,7 @@ export default function Home() {
 			</header>
 			<main>
 				<h2 className='flex justify-center p-4 text-heading  font-family-text'>
-					Les derniers models
+					Les derniers modèles
 				</h2>
 				<div id='ctn-best-pictures'>
 					<BestPictures />
@@ -38,10 +38,10 @@ export default function Home() {
 							'
 						>
 							Bonjour, je suis Sarah, costumière passionnée de
-							couture et surtout de costume historique. Diplômée
+							couture et surtout de costumes historiques. Diplômée
 							d'un CAP vêtement flou (2018), d'un bac
 							professionnel métiers de la mode et du vêtement
-							(2021) et d'une licence DN MADE spectacle spécialité
+							(2021) et d'un DN MADE spectacle spécialité
 							costume à la Martinière Diderot à Lyon.
 						</p>
 						<p
@@ -49,8 +49,8 @@ export default function Home() {
 							'
 						>
 							J'ai eu la chance de travailler dans différents
-							univers : retouche, création en mode et robe de
-							mariée, danse, théâtre, cinéma, notamment sur "Le
+							univers : retouche, création de mode et robes de
+							mariée, danse, théâtre et cinéma - notamment sur le film "Le
 							Comte de Monte-Cristo" en 2024.
 						</p>
 					</div>
@@ -69,7 +69,7 @@ export default function Home() {
 								<p>
 									🌿 Éco-conception : Je privilégie la
 									récupération de tissus (draps anciens,
-									rideaux, dentelles chinées en vide-grenier)
+									rideaux, dentelles chinées en vide-greniers)
 									pour donner une seconde vie à ces matières
 									nobles.
 								</p>
@@ -77,10 +77,10 @@ export default function Home() {
 							<li className='p-2 '>
 								<p>
 									🎭 Inspiration historique : Mes créations
-									s'inspirent des techniques et esthétiques
-									d'époque, adaptées avec les outils modernes.
+									s'inspirent des techniques et des esthétiques
+									d'époque, adaptées avec des outils modernes.
 									Car oui, un véritable costume historique
-									cousu à la main prendrait des mois !
+									cousu entièrement à la main prendrait des mois !
 									Pourquoi se priver de la machine à coudre ?
 								</p>
 							</li>
@@ -93,13 +93,12 @@ export default function Home() {
 					className='p-4'
 				>
 					<p>
-						Le costume historique a toujours été une passion mais
-						c'est en découvrant la danse historique que j'ai réalisé
+						Le costume historique a toujours été une passion, mais
+						c'est en découvrant la danse historique que j'ai réalisée
 						ce qui m'anime vraiment, voir mes croquis prendre vie.
-						J'aime styliser, confectionner, réaliser et porter une
-						attention particulière aux petits détails du costume qui
-						donnent du charme et de l'authenticité à chaque
-						création.
+						J'aime styliser, confectionner et apporter une
+						attention particulière aux détails qui donnent du
+						charme et de l'authenticité à chaque création.
 					</p>
 				</div>
 			</main>

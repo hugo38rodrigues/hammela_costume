@@ -4,16 +4,22 @@ import Link from 'next/link'
 
 export default function LandingPage() {
 	return (
-		<main className='w-full min-h-screen  flex '>
+		<main
+			id='landing-page'
+			className='min-w-full min-h-screen flex'
+		>
 			<div
-				id='landing-page'
-				className='bg-sky-300 w-md'
+				id='ctn-design-1'
+				className='bg-sky-300 w-screen min-h-screen'
 			></div>
-			<div className='flex flex-col items-center justify-evenly w-full h-full'>
+			<div
+				id='ctn-landing-page'
+				className='flex flex-col items-center justify-evenly w-screen min-h-screen'
+			>
 				<div id='logo'>
 					<Image
 						src='/logo.webp'
-						alt=''
+						alt='Logo du site'
 						width={160}
 						height={160}
 					/>
@@ -46,8 +52,8 @@ export default function LandingPage() {
 				</div>
 			</div>
 			<div
-				id=''
-				className='bg-sky-300 w-md'
+				id='ctn-design-2'
+				className='bg-sky-300 w-screen min-h-screen'
 			></div>
 		</main>
 	)

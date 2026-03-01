@@ -13,11 +13,11 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from '../../components/ui/card'
-import { Input } from '../../components/ui/input'
-import { Label } from '../../components/ui/label'
+} from './ui/card'
+import { Input } from './ui/input'
+
 import { Button } from './ui/button'
-import { Field, FieldError } from './ui/field'
+import { Field, FieldError, FieldLabel } from './ui/field'
 import { Textarea } from './ui/textarea'
 
 interface PropsFormContact {
@@ -44,7 +44,7 @@ export const FormContact: FC<PropsFormContact> = ({
 			setErrorMessage("Vous n'êtes pas un humain")
 		} else {
 			const sendResult = await sendEmailAndDescription(email, description)
-			
+
 			if (sendResult?.success) {
 				toast.success('Un email a été envoyé à la créatrice', {
 					position: 'bottom-left',
@@ -83,13 +83,13 @@ export const FormContact: FC<PropsFormContact> = ({
 								data-invalid
 								className='w-52'
 							>
-								<Label
+								<FieldLabel
 									htmlFor='email'
 									className={`pb-2 font-family-text ${isErrorField ? 'text-red-500' : 'text-paragraph'}`}
 									aria-invalid={isErrorField}
 								>
 									Votre adresse mail
-								</Label>
+								</FieldLabel>
 								<Input
 									id='email'
 									aria-invalid={isErrorField}
@@ -114,11 +114,12 @@ export const FormContact: FC<PropsFormContact> = ({
 						<CardAction className='flex justify-end w-full p-4'>
 							<Button
 								asChild
-								className='text-card border-2 border-btn focus-visible:ring-0 focus-visible:ring-offset-0 shadow-2xl'
+								className='text-card border-2 border-btn shadow-2xl'
 							>
 								<Link
 									href={'/assets/fiche_mesure.pdf'}
 									target='_blank'
+									rel='noopener noreferrer'
 									className='text-paragraph font-family-text'
 								>
 									Comment prendre vos mesures
@@ -127,32 +128,32 @@ export const FormContact: FC<PropsFormContact> = ({
 						</CardAction>
 					</CardHeader>
 					<CardContent>
-						<CardTitle>
-							<p className='text-paragraph text-size-body font-family-text p-4 '>
-								Pour toute commande, merci de renseigner votre
+						<CardDescription className='p-2 flex flex-col justify-center'>
+							<FieldLabel
+								htmlFor='description'
+								className={`pb-2 font-family-text text-paragraph text-size-body ${isErrorField ? 'text-red-500' : 'text-paragraph'}`}
+								aria-invalid={isErrorField}
+							>
+								Pour toute commande, veuillez indiquer votre
 								taille et toute autre information pour votre
 								création.
-							</p>
-						</CardTitle>
-						<CardDescription className='p-4 flex justify-center'>
-							<Field data-invalid>
-								<Textarea
-									id='description'
-									name='description'
-									required
-									value={description}
-									aria-invalid={isErrorField}
-									className={cn(
-										'w-80 h-44 border-2 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-2xl',
-										isErrorField
-											? 'border-red-500 focus-visible:border-red-500'
-											: 'border-btn focus-visible:border-btn',
-									)}
-									onChange={(e) =>
-										setDescription(e.currentTarget.value)
-									}
-								/>
-							</Field>
+							</FieldLabel>
+							<Textarea
+								id='description'
+								name='description'
+								required
+								value={description}
+								aria-invalid={isErrorField}
+								className={cn(
+									'w-80 h-44 border-2 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-2xl',
+									isErrorField
+										? 'border-red-500 focus-visible:border-red-500'
+										: 'border-btn focus-visible:border-btn',
+								)}
+								onChange={(e) =>
+									setDescription(e.currentTarget.value)
+								}
+							/>
 						</CardDescription>
 					</CardContent>
 					<CardFooter className=''>

@@ -22,7 +22,7 @@ export default function Home() {
 				/>
 			</header>
 			<main>
-				<h2 className='flex justify-center p-4 text-heading text-size-body font-family-text'>
+				<h2 className='flex justify-center p-4 text-heading  font-family-text'>
 					Les derniers models
 				</h2>
 				<div id='ctn-best-pictures'>
@@ -35,9 +35,7 @@ export default function Home() {
 					<div id='presentation'>
 						<p
 							className='
-							text-size-body
-							p-2
-							text-paragraph'
+							'
 						>
 							Bonjour, je suis Sarah, costumière passionnée de
 							couture et surtout de costume historique. Diplômée
@@ -48,9 +46,7 @@ export default function Home() {
 						</p>
 						<p
 							className='
-							text-size-body
-							p-2
-							text-paragraph'
+							'
 						>
 							J'ai eu la chance de travailler dans différents
 							univers : retouche, création en mode et robe de
@@ -59,38 +55,44 @@ export default function Home() {
 						</p>
 					</div>
 				</div>
-				<div
-					id='engagement'
-				>
+				<div id='engagement'>
 					<div id='engagement-list'>
 						<ul>
-							<li className='text-size-body p-2 text-paragraph'>
-								✨ Création française : Toutes les pièces sont
-								imaginées et réalisées par mes soins dans mon
-								atelier.
+							<li className='p-2'>
+								<p>
+									✨ Création française : Toutes les pièces
+									sont imaginées et réalisées par mes soins
+									dans mon atelier.
+								</p>
 							</li>
-							<li className='text-size-body p-2 text-paragraph'>
-								🌿 Éco-conception : Je privilégie la
-								récupération de tissus (draps anciens, rideaux,
-								dentelles chinées en vide-grenier) pour donner
-								une seconde vie à ces matières nobles.
+							<li className='p-2 '>
+								<p>
+									🌿 Éco-conception : Je privilégie la
+									récupération de tissus (draps anciens,
+									rideaux, dentelles chinées en vide-grenier)
+									pour donner une seconde vie à ces matières
+									nobles.
+								</p>
 							</li>
-							<li className='text-size-body p-2 text-paragraph'>
-								🎭 Inspiration historique : Mes créations
-								s'inspirent des techniques et esthétiques
-								d'époque, adaptées avec les outils modernes. Car
-								oui, un véritable costume historique cousu à la
-								main prendrait des mois ! Pourquoi se priver de
-								la machine à coudre ?
+							<li className='p-2 '>
+								<p>
+									🎭 Inspiration historique : Mes créations
+									s'inspirent des techniques et esthétiques
+									d'époque, adaptées avec les outils modernes.
+									Car oui, un véritable costume historique
+									cousu à la main prendrait des mois !
+									Pourquoi se priver de la machine à coudre ?
+								</p>
 							</li>
 						</ul>
+						<p></p>
 					</div>
 				</div>
 				<div
 					id='passion'
 					className='p-4'
 				>
-					<p className='text-size-body text-paragraph'>
+					<p>
 						Le costume historique a toujours été une passion mais
 						c'est en découvrant la danse historique que j'ai réalisé
 						ce qui m'anime vraiment, voir mes croquis prendre vie.

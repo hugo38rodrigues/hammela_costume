@@ -23,7 +23,7 @@ export default function Home() {
 					className='max-sm:hidden'
 				/>
 			</header>
-			<main className='w-dvh max-sm:w-96'>
+			<main className='w-dvh max-sm:w-96 md:w-auto'>
 				<h2 className='flex justify-center p-4 text-heading  font-family-text'>
 					Les derniers modèles
 				</h2>
@@ -40,14 +40,14 @@ export default function Home() {
 							couture et surtout de costumes historiques. Diplômée
 							d'un CAP vêtement flou (2018), d'un bac
 							professionnel métiers de la mode et du vêtement
-							(2021) et d'un DN MADE spectacle spécialité
-							costume à la Martinière Diderot à Lyon.
+							(2021) et d'un DN MADE spectacle spécialité costume
+							à la Martinière Diderot à Lyon.
 						</p>
 						<p className='leading-body'>
 							J'ai eu la chance de travailler dans différents
 							univers : retouche, création de mode et robes de
-							mariée, danse, théâtre et cinéma - notamment sur le film "Le
-							Comte de Monte-Cristo" en 2024.
+							mariée, danse, théâtre et cinéma - notamment sur le
+							film "Le Comte de Monte-Cristo" en 2024.
 						</p>
 					</div>
 				</div>
@@ -73,11 +73,12 @@ export default function Home() {
 							<li className='p-2'>
 								<p>
 									🎭 Inspiration historique : Mes créations
-									s'inspirent des techniques et des esthétiques
-									d'époque, adaptées avec des outils modernes.
-									Car oui, un véritable costume historique
-									cousu entièrement à la main prendrait des mois !
-									Pourquoi se priver de la machine à coudre ?
+									s'inspirent des techniques et des
+									esthétiques d'époque, adaptées avec des
+									outils modernes. Car oui, un véritable
+									costume historique cousu entièrement à la
+									main prendrait des mois ! Pourquoi se priver
+									de la machine à coudre ?
 								</p>
 							</li>
 						</ul>
@@ -90,10 +91,10 @@ export default function Home() {
 				>
 					<p>
 						Le costume historique a toujours été une passion, mais
-						c'est en découvrant la danse historique que j'ai réalisée
-						ce qui m'anime vraiment, voir mes croquis prendre vie.
-						J'aime styliser, confectionner et apporter une
-						attention particulière aux détails qui donnent du
+						c'est en découvrant la danse historique que j'ai
+						réalisée ce qui m'anime vraiment, voir mes croquis
+						prendre vie. J'aime styliser, confectionner et apporter
+						une attention particulière aux détails qui donnent du
 						charme et de l'authenticité à chaque création.
 					</p>
 				</div>

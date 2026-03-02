@@ -53,5 +53,9 @@ p {
 		flex-direction: column;
 		width: 135px;
 	}
+    
+    p {
+        font-size: smaller;
+    }
 }
 

@@ -71,7 +71,7 @@ export const FormContact: FC<PropsFormContact> = ({
 					Contactez Moi
 				</h1>
 			</header>
-			<main className='w-max h-max shadow-2xl max-sm:w-96'>
+			<main className='w-max h-max shadow-2xl max-sm:w-80'>
 				<Card className='w-full h-full border-btn bg-neutral-50-50 border-2 bg-white'>
 					<CardHeader className='flex flex-col'>
 						<div

@@ -4,14 +4,15 @@ import Image from 'next/image'
 export default function Home() {
 	return (
 		<>
-			<header className=' w-full flex items-center justify-between'>
+			<header className='w-dvh flex items-center pr-16 justify-between max-sm:justify-center max-sm:pr-0'>
 				<Image
 					src={'/logo.webp'}
 					alt='Mon logo'
 					height={120}
 					width={110}
+					className='max-sm:hidden'
 				/>
-				<h1 className='text-size-title text-heading font-family-title pr-16'>
+				<h1 className='text-size-title text-heading font-family-title'>
 					Hammela Costume
 				</h1>
 				<Image
@@ -19,9 +20,10 @@ export default function Home() {
 					alt='Un drapeau français'
 					height={30}
 					width={30}
+					className='max-sm:hidden'
 				/>
 			</header>
-			<main>
+			<main className='w-dvh max-sm:w-96'>
 				<h2 className='flex justify-center p-4 text-heading  font-family-text'>
 					Les derniers modèles
 				</h2>
@@ -33,10 +35,7 @@ export default function Home() {
 					className='p-4'
 				>
 					<div id='presentation'>
-						<p
-							className='
-							'
-						>
+						<p>
 							Bonjour, je suis Sarah, costumière passionnée de
 							couture et surtout de costumes historiques. Diplômée
 							d'un CAP vêtement flou (2018), d'un bac
@@ -44,10 +43,7 @@ export default function Home() {
 							(2021) et d'un DN MADE spectacle spécialité
 							costume à la Martinière Diderot à Lyon.
 						</p>
-						<p
-							className='
-							'
-						>
+						<p className='leading-body'>
 							J'ai eu la chance de travailler dans différents
 							univers : retouche, création de mode et robes de
 							mariée, danse, théâtre et cinéma - notamment sur le film "Le
@@ -65,7 +61,7 @@ export default function Home() {
 									dans mon atelier.
 								</p>
 							</li>
-							<li className='p-2 '>
+							<li className='p-2'>
 								<p>
 									🌿 Éco-conception : Je privilégie la
 									récupération de tissus (draps anciens,
@@ -74,7 +70,7 @@ export default function Home() {
 									nobles.
 								</p>
 							</li>
-							<li className='p-2 '>
+							<li className='p-2'>
 								<p>
 									🎭 Inspiration historique : Mes créations
 									s'inspirent des techniques et des esthétiques

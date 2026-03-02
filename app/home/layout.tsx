@@ -8,7 +8,7 @@ export default function HomeLayout({
 }) {
 	return (
 		<>
-			<div className='w-full min-h-screen flex flex-col items-center p-4 bg-fond bg-cover bg-center bg-no-repeat bg-fixed'>
+			<div id='layout-home' className='w-full min-h-screen flex flex-col items-center p-4 bg-fond bg-cover bg-center bg-no-repeat bg-fixed'>
 				<NavBar />
 				{children}
 				<Footer />

@@ -71,8 +71,8 @@ export const FormContact: FC<PropsFormContact> = ({
 					Contactez Moi
 				</h1>
 			</header>
-			<main className='w-max h-max shadow-2xl max-sm:w-80'>
-				<Card className='w-full h-full border-btn bg-neutral-50-50 border-2 bg-white'>
+			<main className='min-w-full max-h-screen max-sm:w-80 flex justify-center'>
+				<Card className='w-max h-full border-btn bg-neutral-50-50 border-2 bg-white shadow-2xl'>
 					<CardHeader className='flex flex-col'>
 						<div
 							id='ctn-email'

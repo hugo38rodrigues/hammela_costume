@@ -12,7 +12,6 @@ import {
 	CardDescription,
 	CardFooter,
 	CardHeader,
-	CardTitle,
 } from './ui/card'
 import { Input } from './ui/input'
 
@@ -72,8 +71,8 @@ export const FormContact: FC<PropsFormContact> = ({
 					Contactez Moi
 				</h1>
 			</header>
-			<main className='w-lg h-lg shadow-2xl'>
-				<Card className='w-full h-full border-btn bg-neutral-50-50 border-2 bg-white'>
+			<main className='min-w-full max-h-screen max-sm:w-80 flex justify-center'>
+				<Card className='w-max h-full border-btn bg-neutral-50-50 border-2 bg-white shadow-2xl'>
 					<CardHeader className='flex flex-col'>
 						<div
 							id='ctn-email'
@@ -94,7 +93,7 @@ export const FormContact: FC<PropsFormContact> = ({
 									id='email'
 									aria-invalid={isErrorField}
 									className={cn(
-										'test-shadow-2xl focus-visible:ring-0 focus-visible:ring-offset-0',
+										'border-2 focus-visible:ring-0 focus-visible:ring-offset-0 caret-gray-700 text-paragraph font-family-text',
 										isErrorField
 											? 'border-red-500 focus-visible:border-red-500'
 											: 'border-btn focus-visible:border-btn',
@@ -112,19 +111,14 @@ export const FormContact: FC<PropsFormContact> = ({
 							</Field>
 						</div>
 						<CardAction className='flex justify-end w-full p-4'>
-							<Button
-								asChild
-								className='text-card border-2 border-btn shadow-2xl'
+							<Link
+								href={'/assets/fiche_mesure.pdf'}
+								target='_blank'
+								rel='noopener noreferrer'
+								className='text-paragraph font-family-text underline decoration-1 decoration-gray-600'
 							>
-								<Link
-									href={'/assets/fiche_mesure.pdf'}
-									target='_blank'
-									rel='noopener noreferrer'
-									className='text-paragraph font-family-text'
-								>
-									Comment prendre vos mesures
-								</Link>
-							</Button>
+								Comment prendre vos mesures
+							</Link>
 						</CardAction>
 					</CardHeader>
 					<CardContent>
@@ -145,7 +139,7 @@ export const FormContact: FC<PropsFormContact> = ({
 								value={description}
 								aria-invalid={isErrorField}
 								className={cn(
-									'w-80 h-44 border-2 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-2xl',
+									'w-auto h-96 border-2 focus-visible:ring-0 focus-visible:ring-offset-0 caret-gray-700 text-paragraph font-family-text max-sm:h-60',
 									isErrorField
 										? 'border-red-500 focus-visible:border-red-500'
 										: 'border-btn focus-visible:border-btn',
@@ -156,9 +150,9 @@ export const FormContact: FC<PropsFormContact> = ({
 							/>
 						</CardDescription>
 					</CardContent>
-					<CardFooter className=''>
+					<CardFooter>
 						<Button
-							className='border-btn text-paragraph font-family-text border-2'
+							className='border-btn text-paragraph font-family-text border-2 cursor-pointer hover:bg-gray-600 hover:text-white'
 							onClick={getEmailAndDescription}
 						>
 							Envoyer

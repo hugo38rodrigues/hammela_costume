@@ -13,7 +13,7 @@ export default function Galerie() {
 			<h1 className='text-size-title text-heading font-family-title'>
 				Bienvenue dans ma galerie
 			</h1>
-			<p>De nouveaux modèles sont en cours de création</p>
+			<p className='max-sm:pl-4'>De nouveaux modèles sont en cours de création</p>
 			<div
 				id='ctn-pictures'
 				className='flex flex-wrap justify-center w-4xl h-9/12'

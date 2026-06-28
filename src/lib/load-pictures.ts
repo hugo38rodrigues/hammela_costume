@@ -11,7 +11,7 @@ export const shortedPictures = (picture: Picture[]): Picture[] => {
 }
 
 export const getPictures = (): Picture[] => {
-	const imagesDir = path.join(process.cwd(), 'public/assets')
+	const imagesDir = path.join(process.cwd(), 'public/gallery')
 
 	const files = fs.readdirSync(imagesDir)
 

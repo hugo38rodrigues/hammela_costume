@@ -21,11 +21,16 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
+      - name: Get name and version from package.json
+        id: package
+        run: |
+          echo "name=$(jq -r .name package.json)" >> "$GITHUB_OUTPUT"
+          echo "version=$(jq -r .version package.json)" >> "$GITHUB_OUTPUT"
       - name: Extract metadata (tags, labels)
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: xwdrblue/hammela
+          images: xwdrblue/${{steps.package.outputs.name}}
           tags: |
             type=raw,value=${{ steps.package.outputs.version }}
             type=raw,value=latest,enable={{is_default_branch}}

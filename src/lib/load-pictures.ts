@@ -23,7 +23,7 @@ export const getPictures = (): Picture[] => {
 
 			return {
 				alt: file,
-				src: `/assets/${file}`,
+				src: `/gallery/${file}`,
 				createdAt: stats.birthtime, // date de création
 				modifiedAt: stats.mtime, // date de modification
 			}

@@ -25,9 +25,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: xwdrblue/site_vitrine
+          images: xwdrblue/hammela
           tags: |
-            type={{version}}
+            type=raw,value=${{ steps.package.outputs.version }}
+            type=raw,value=latest,enable={{is_default_branch}}
 
       - name: Build and push
         uses: docker/build-push-action@v6
